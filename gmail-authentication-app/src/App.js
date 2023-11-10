@@ -5,23 +5,18 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const responseMessage = (response) => {
-
     // Check if the response contains user information
     if (response) {
-
       setIsAuthenticated(true);
     }
   };
 
   return (
-    <div>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
       {isAuthenticated ? (
         <h1>Welcome, User!</h1>
       ) : (
         <div>
-          <h2>React Google Login</h2>
-          <br />
-          <br />
           <GoogleLogin onSuccess={responseMessage} />
         </div>
       )}
